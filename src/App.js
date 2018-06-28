@@ -4,7 +4,7 @@ import NavBar from './components/navbar';
 import VolunteerCards from './components/volunteercards';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import SignupForm from './components/signupform';
-import HomePage from './components/volunteercards';
+import HomePage from './components/homepage';
 class App extends Component {
   render() {
     return (

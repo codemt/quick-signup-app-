@@ -39,7 +39,7 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
                 <NavLink href="/signup">Signup</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="https://github.com/reactstrap/reactstrap">About Us</NavLink>
+                <NavLink href="/">About Us</NavLink>
               </NavItem>
             </Nav>
           </Collapse>

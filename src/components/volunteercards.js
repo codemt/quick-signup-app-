@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Card, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
+import SlideCards from './carousel';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
  class VolunteerCards extends Component {
