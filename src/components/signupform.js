@@ -4,6 +4,8 @@ import { OutgoingMessage } from 'http';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../stylesheets/signupform.css';
+import { withAlert } from 'react-alert';
+import { Redirect } from 'react-router-dom';
  class SignupForm extends Component {
 
     constructor(props){
@@ -20,7 +22,6 @@ import '../stylesheets/signupform.css';
       //  this.handleChange = this.handleChange.bind(this);
     }
     submitForm(e){
-        
         e.preventDefault();
         console.log(123);
         const name = e.target.name.value;
@@ -34,7 +35,18 @@ import '../stylesheets/signupform.css';
         console.log(phone);
         console.log(message);
 
+        if(name.length == 0 || email.length == 0 || phone.length == 0 || message.length == 0 )
+        {
+           this.props.alert.show('Please fill the details');
+        }
+        else {
+
+        
         this.saveMessage(name,interest,email,phone,message);
+        this.props.alert.show('Thank You , we will contact you');
+
+        }
+        
        // console.log(this.state.name);
     }
      saveMessage(name,interest,email,phone,message){
@@ -107,4 +119,4 @@ import '../stylesheets/signupform.css';
     )
   }
 }
-export default SignupForm;
+export default withAlert(SignupForm);
