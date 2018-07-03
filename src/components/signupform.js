@@ -66,7 +66,7 @@ import axios from 'axios';
     async sendEmail(name,interest,email,phone,message){
           
 
-      const form = await axios.post('/api/form',{
+      const form = await axios.post('https://mailbd.herokuapp.com/api/form',{
         name,
         interest,
         email,
