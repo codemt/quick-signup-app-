@@ -6,6 +6,7 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.min.js';
 import '../stylesheets/signupform.css';
 import { withAlert } from 'react-alert';
 import { Redirect } from 'react-router-dom';
+import axios from 'axios';
  class SignupForm extends Component {
 
     constructor(props){
@@ -43,6 +44,7 @@ import { Redirect } from 'react-router-dom';
 
         
         this.saveMessage(name,interest,email,phone,message);
+        this.sendEmail(name,interest,email,phone,message);
         this.props.alert.show('Thank You , we will contact you');
 
         }
@@ -61,6 +63,18 @@ import { Redirect } from 'react-router-dom';
             message:message
         })
     }
+    async sendEmail(name,interest,email,phone,message){
+          
+
+      const form = await axios.post('/api/form',{
+        name,
+        interest,
+        email,
+        phone,
+        message
+    })
+
+}
   render() {
     return (
       <div style={{backgroundImage: `url(https://www.dasra.org/sites/default/files/styles/org_banner/public/TFI_Banner.jpg?itok=QMvxXnXq)`}}>
