@@ -66,15 +66,22 @@ import axios from 'axios';
     async sendEmail(name,interest,email,phone,message){
           
 
-      const form = await axios.post('http://localhost:3001/api/form',{
+      const form = await axios.post('https://mailbd.herokuapp.com/api/form',{
         name,
         interest,
         email,
         phone,
         message
     })
-
+    .then(response => { 
+      console.log(response)
+    })
+    .catch(error => {
+        console.log(error.response)
+    });
 }
+
+
   render() {
     return (
       <div style={{backgroundImage: `url(https://www.dasra.org/sites/default/files/styles/org_banner/public/TFI_Banner.jpg?itok=QMvxXnXq)`}}>
